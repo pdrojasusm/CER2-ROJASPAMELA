@@ -22,6 +22,13 @@ body{
     background-color: #97caff;
 }
 
+.vertical-center {
+    min-height: 100%;
+    min-height: 50vh;
+  
+    display: flex;
+    align-items: center;
+}
 
 nav{
     margin-right: 1vw;
