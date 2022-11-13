@@ -1,0 +1,59 @@
+{% extends 'Core/base.html' %}
+
+{% block titulo %} Gestión de Correspondencia {% endblock %}
+
+{% block header %} Gestión de Correspondencia {% endblock %}
+
+{% block content %}
+    <br>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-6">
+        <form method="GET" action=".">
+          <div class="row">
+            <div class="col-6"><input class="form-control py-2 border-right-0 border vertical-top" type="search" name="residencia_info" placeholder="Correspondencia por residencia..." value="{{ request.GET.residencia_info }}"  />
+            </div>
+            <div class="col-6"><button type="submit" class="btn btn-primary">Buscar</button></div>
+          </div>
+          
+        </form>
+      </div>
+      <div class="col-2"></div>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Listado de Correspondencias</h1>
+        <br>
+        <div class="card shadow mb-4">
+            <div class="table-responsive">
+              <table class="table table-bordered"  width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Residencia</th>
+                    <th>Destinatario</th>
+                    <th>Estado</th>
+                    <th>Fecha de Recepción</th>
+                    <th>Fecha de Entrega</th>
+                    <th>Recibido por el Conserje</th>
+                    <th>Entregado por el Conserje</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for correspondencia in correspondencias %}
+                    <tr>
+                      <td>{{ correspondencia.residencia }}</td>
+                      <td>{{ correspondencia.destinatario }}</td>
+                      <td>{{ correspondencia.estado }}</td>
+                      <td>{{ correspondencia.f_recepcion }}</td>
+                      <td>{{ correspondencia.f_entrega }}</td>
+                      <td>{{ correspondencia.conserje_rec }}</td>
+                      <td>{{ correspondencia.conserje_ent }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

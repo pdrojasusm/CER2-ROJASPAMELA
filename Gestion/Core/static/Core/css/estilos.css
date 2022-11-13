@@ -1,0 +1,60 @@
+body{
+    font-family: 'EB Garamond', serif;
+}
+
+#header{
+    height: 50vh;
+}
+
+.bg-menu{
+    background-color: #2878FE;
+}
+
+#logo{
+    background-image: url(../img/loho.png);
+    background-color: #97caff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.bg-intro{
+    background-color: #97caff;
+}
+
+
+nav{
+    margin-right: 1vw;
+    padding-bottom: 5vh;
+}
+
+nav ul{
+    display: inline;
+}
+
+nav ul li{
+    float: left;
+    list-style: none;
+}
+
+nav ul li a{
+    display: block;
+    padding: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.table-bordered{
+    border: #fff;
+}
+
+.table{
+    background-color: #97caff;
+}
+
+.table .thead .tr .th{
+    background-color: #2878FE;
+}

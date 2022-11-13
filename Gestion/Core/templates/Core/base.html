@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'Core/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Core/css/estilos.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Rubik+Dirt&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header" class="row">
+        <div id="logo" class="col-6"></div>
+        <div id="intro" class="col-6 bg-intro">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container text-center vertical-center">
+                    <br><br><br>
+                    <h4 class="display-4">Gestión</h4>
+                    <h4 class="display-4">de</h4>
+                    <h4 class="display-4">Correo</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu" class="row bg-menu">
+        <div id="col-8 col-sm-1 col-md-3 col-xl-6"></div>
+        <div id="col-4 co-sm-11 col-md-9 col-xl-6">
+            <nav class="navbar navbar-expand-lg bg-top float-end">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                        <li><a href="{% url 'correspondencia' %}">Correspondencia</a></li>
+                        <li><a href="{% url 'admin:index' %}">Administración</a></li>
+                    </ul>
+                </div>
+            </div>
+            </nav>
+        </div>
+    </div>
+    {% block content %} {% endblock %}
+    <script src="{% static 'Core/js/bootstrap.js' %}"></script>
+</body>
+</html>
